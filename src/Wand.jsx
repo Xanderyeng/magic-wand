@@ -3,13 +3,13 @@ import "./wand.css";
 
 const images = [
   {
-    url: "https://assets.codepen.io/1468070/mousepad-tile-1.png?format=auto&quality=80"
+    url: "https://unsplash.com/photos/FDYbS43jUrU"
   },
   {
-    url: "https://assets.codepen.io/1468070/mousepad-tile-4.png?format=auto&quality=80"
+    url: "https://unsplash.com/photos/V4MBq8kue3U"
   },
   {
-    url: "https://assets.codepen.io/1468070/mousepad-tile-3.png?format=auto&quality=80"
+    url: "https://unsplash.com/photos/BhK9JdaBTvk"
   },
 ];
 
