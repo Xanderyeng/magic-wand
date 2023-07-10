@@ -1,0 +1,169 @@
+body {  
+    background: rgba(2, 6, 23,1);
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+#wand > .magic {
+    display: inline-block;
+    position: relative;
+  }
+  
+  #wand > .magic > .magic-star {
+    --size: clamp(20px, 1.5vw, 30px);
+  
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+  }
+  
+  #wand > .magic > .magic-star > svg {
+    animation: rotate 1000ms linear infinite;
+    display: block;
+    opacity: 0.7;
+  }
+  
+  #wand > .magic > .magic-star > svg > path {
+    fill: var(--violet);
+  }
+  
+  #wand > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+  
+  #wand {
+    width: 10vmin;
+    aspect-ratio: 1 / 10;
+    background: linear-gradient(
+      to right, 
+      rgb(26 24 28) 10%, 
+      rgb(42 40 44) 45% 55%, 
+      rgb(26 24 28) 90%
+    );
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    translate: -50%;
+    rotate: -3deg;
+    z-index: 100;
+    border-radius: 3vmin;
+    box-shadow: 0vmin 1vmin 4vmin rgb(0 0 0 / 80%);
+    overflow: hidden;
+  }
+  
+  #wand > .cap {
+    height: 20%;
+    width: 100%;
+    background: linear-gradient(
+      to right, 
+      rgb(212 221 236) 10%, 
+      rgb(255 255 255) 45% 55%, 
+      rgb(212 221 236) 90%
+    );
+  }
+  
+  #tiles {
+    display: flex;
+  }
+  
+  .tile {
+    display: grid;
+    place-items: center;
+    width: 38vmin;
+    aspect-ratio: 1;
+    background-color: rgb(31, 41, 55);
+    border-radius: 6vmin;
+    box-shadow: 0vmin 3vmin 6vmin rgb(0 0 0 / 25%),
+      inset 0vmin 0.5vmin 1vmin rgb(255 255 255 / 15%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tile:nth-child(1) {
+    rotate: 3deg;
+    z-index: 3;
+  }
+  
+  .tile:nth-child(2) {
+    rotate: -2deg;
+    z-index: 2;
+  }
+  
+  .tile:nth-child(3) {
+    rotate: 5deg;
+    z-index: 1;
+  }
+  
+  .tile:is(:nth-child(2), :nth-child(3)) {
+    margin-left: -10vmin;
+  }
+  
+  .tile > i {
+    font-size: 15vmin;
+    color: rgb(255 255 255 / 10%);
+  }
+  
+  .tile > img {
+    height: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    object-fit: cover;
+    opacity: var(--opacity);
+    filter: blur(calc(var(--blur) * 10px));
+  }
+
+  #stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  
+  .star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform-origin: center;
+    pointer-events: none;
+    opacity: 0;
+    animation: sparkle 1s infinite;
+  }
+  
+  @keyframes sparkle {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  
+  
